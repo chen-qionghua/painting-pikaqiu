@@ -28,10 +28,9 @@ const player = {
     for (let key in player.events) {
       if (player.events.hasOwnProperty(key)) {
         const value = player.events[key] // pause / play / slow
-        document.querySelector(key).onclick = player[value]
+        document.querySelector(key).onclick = player[value] //这是一个函数
       }
     }
-
   },
   run: () => {
     player.n += 1
@@ -40,7 +39,7 @@ const player = {
     }
     player.ui.demo.innerText = stringCss.substring(0, player.n)
     player.ui.demo2.innerHTML = stringCss.substring(0, player.n)
-    player.ui.demo.scrollTop = player.ui.demo.scrollHeight
+    player.ui.demo.scrollTop = player.ui.demo.scrollHeight //页面滚动位置为滚动条高度（页面拉底状态）
   },
   play: () => {
     window.clearInterval(player.id)//播放即销毁定时器后重新安装定时器

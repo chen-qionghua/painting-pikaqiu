@@ -13,7 +13,8 @@ const player = {
     '#btnPlay': 'play',
     '#btnSlow': 'slow',
     '#btnNormal': 'normal',
-    '#btnFast': 'fast'
+    '#btnFast': 'fast',
+    '#btnReload':'reload'
   },
   n: 1,
   init: () => {
@@ -62,6 +63,12 @@ const player = {
   fast: () => {
     player.pause()
     player.time = 0
+    player.play()
+  },
+  reload: () => {
+    player.pause()
+    player.time = 100
+    player.n = 1
     player.play()
   }
 }
